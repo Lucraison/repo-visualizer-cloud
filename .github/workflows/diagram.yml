@@ -11,7 +11,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Update diagram
+        id: make_diagram
         uses: githubocto/repo-visualizer@main
         with:
           should_push: false
           excluded_paths: "ignore,.github"
+          output_file: "diagram.svg"
+          artifact_name: "my-diagram"
+      - name: Get Artifact
+        uses: actions/upload-artifact@v4
+        with:
+            name: my-artifact
+            path: "downloads"
