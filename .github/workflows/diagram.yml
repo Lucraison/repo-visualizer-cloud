@@ -17,7 +17,7 @@ jobs:
           should_push: false
           excluded_paths: "ignore,.github"
           output_file: "diagram.svg"
-          artifact_name: "staticsite-diagram"
+          artifact_name: staticsite-diagram
       - name: Get Artifact
         uses: actions/upload-artifact@v4
         with:
